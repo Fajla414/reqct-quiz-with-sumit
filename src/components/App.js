@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/App.css";
 import Layout from "./Layout";
-import Home from "./pages/Home";
+import SignUp from "./pages/SignUp";
 
 const App = () => {
   return (
     <Layout>
-      <Home />
+      <SignUp />
     </Layout>
   );
 };
