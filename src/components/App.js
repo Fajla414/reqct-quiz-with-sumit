@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import "../styles/App.css";
 import Layout from "./Layout";
-import Quiz from "./pages/Quiz";
+import Result from "./pages/Result";
 
 const App = () => {
   return (
@@ -10,7 +10,8 @@ const App = () => {
       <Layout>
         {/* <SignUp /> */}
         {/* <Login /> */}
-        <Quiz />
+        {/* <Quiz /> */}
+        <Result />
       </Layout>
     </BrowserRouter>
   );
