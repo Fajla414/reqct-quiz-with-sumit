@@ -6,16 +6,16 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import React, { useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import "../firebase";
 
-const AuthContext = React.createContext();
+const AuthContext = createContext();
 
 export function useAuth() {
   return useContext(AuthContext);
 }
 
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
 
@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
     const auth = getAuth();
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
-      setLoading(true);
+      setLoading(false);
     });
 
     return unSubscribe;
@@ -70,5 +70,3 @@ const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-export default AuthProvider;
