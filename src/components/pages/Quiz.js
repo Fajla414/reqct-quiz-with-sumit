@@ -63,7 +63,6 @@ const Quiz = () => {
 
   // handle when user click the next button get the next question
   const nextQuestion = () => {
-    console.log("next");
     if (currenQuestion + 1 < questions.length) {
       setCurrentQuestion((prevCurrent) => prevCurrent + 1);
     }
@@ -100,6 +99,7 @@ const Quiz = () => {
           <h1>{qna[currenQuestion].title}</h1>
           <h4>Question can have multiple answers</h4>
           <Answers
+            input={true}
             options={qna[currenQuestion].options}
             handleChange={handleAnswerChange}
           />
