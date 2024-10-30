@@ -109,7 +109,7 @@ const Quiz = () => {
             submit={submit}
             progress={percentage}
           />
-          <Miniplayer />
+          <Miniplayer id={id} title={qna[currenQuestion].title} />
         </>
       )}
     </>
